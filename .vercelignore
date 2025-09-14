@@ -1,0 +1,32 @@
+# Python files and dependencies
+venv/
+__pycache__/
+*.py
+*.pyc
+requirements*.txt
+
+# Documents and large files
+documents/
+*.pdf
+
+# Development files
+.env
+.git/
+.gitignore
+README*.md
+thumbnail.png
+
+# Python-specific files
+api/index-python.py
+api/index_lightweight.py
+api/index_semantic_kernel.py
+chatbot_rag.py
+ingestion.py
+retrieval*.py
+sample_*.py
+
+# Keep only Node.js essentials
+!package.json
+!api/index.js
+!api/index-langchain.js
+!static/
