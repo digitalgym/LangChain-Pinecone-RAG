@@ -1,15 +1,23 @@
 {
-  "buildCommand": "pip install -r requirements-vercel.txt && python index_semantic_kernel.py",
+  "version": 2,
   "builds": [
     {
-      "src": "api/index_semantic_kernel.py",
-      "use": "@vercel/python"
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "static/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "api/index.js"
+    },
+    {
       "src": "/(.*)",
-      "dest": "api/index_semantic_kernel.py"
+      "dest": "static/$1"
     }
   ]
 }
